@@ -348,6 +348,8 @@ PODS:
   - react-native-ffmpeg/https (0.5.2):
     - mobile-ffmpeg-https (= 4.4)
     - React
+  - react-native-fitness (0.5.3):
+    - React-Core
   - react-native-meta-media (0.0.11):
     - React-Core
   - React-perflogger (0.68.1)
@@ -481,6 +483,7 @@ DEPENDENCIES:
   - React-jsinspector (from `../node_modules/react-native/ReactCommon/jsinspector`)
   - React-logger (from `../node_modules/react-native/ReactCommon/logger`)
   - react-native-ffmpeg (from `../node_modules/react-native-ffmpeg`)
+  - "react-native-fitness (from `../node_modules/@ovalmoney/react-native-fitness`)"
   - react-native-meta-media (from `../node_modules/react-native-media-meta`)
   - React-perflogger (from `../node_modules/react-native/ReactCommon/reactperflogger`)
   - React-RCTActionSheet (from `../node_modules/react-native/Libraries/ActionSheetIOS`)
@@ -571,6 +574,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native/ReactCommon/logger"
   react-native-ffmpeg:
     :path: "../node_modules/react-native-ffmpeg"
+  react-native-fitness:
+    :path: "../node_modules/@ovalmoney/react-native-fitness"
   react-native-meta-media:
     :path: "../node_modules/react-native-media-meta"
   React-perflogger:
@@ -655,6 +660,7 @@ SPEC CHECKSUMS:
   React-jsinspector: 218a2503198ff28a085f8e16622a8d8f507c8019
   React-logger: f79dd3cc0f9b44f5611c6c7862badd891a862cf8
   react-native-ffmpeg: 587fa045f985d775107f4b8cbb6c79df0ad68e63
+  react-native-fitness: a359b13e7d7a24e5611992f92ece32960943cd83
   react-native-meta-media: ee837c99adfdc2d6f14bd129b97f9bd3e84434d8
   React-perflogger: 30ab8d6db10e175626069e742eead3ebe8f24fd5
   React-RCTActionSheet: 4b45da334a175b24dabe75f856b98fed3dfd6201

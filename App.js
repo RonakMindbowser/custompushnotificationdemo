@@ -2,6 +2,7 @@ import React, { } from 'react';
 import { View, Platform } from 'react-native';
 import GoogleFitAndroidScreen from './src/GoogleFitAndroidScreen';
 import AppleHealthKitIOSScreen from './src/AppleHealthKitIOSScreen';
+import RNFitness from './src/RNFitness';
 
 const App = () => {
   return (
@@ -12,6 +13,7 @@ const App = () => {
           :
           <AppleHealthKitIOSScreen />
       }
+      {/* <RNFitness /> */}
     </View>
   )
 }

@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@notifee/react-native": "^5.2.1",
+    "@ovalmoney/react-native-fitness": "^0.5.3",
     "@react-native-firebase/app": "^14.9.1",
     "@react-native-firebase/messaging": "^14.9.1",
     "add": "^2.0.6",

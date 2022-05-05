@@ -130,6 +130,12 @@ const GoogleFitAndroidScreen = () => {
     const getHeartRateAndBloodPressureData = async () => {
         console.log("Checking for heart rate ");
         try {
+            const options = {
+                startDate: "2017-01-01T00:00:17.971Z", // required
+                endDate: new Date().toISOString(), // required
+                bucketUnit: BucketUnit.DAY, // optional - default "DAY". Valid values: "NANOSECOND" | "MICROSECOND" | "MILLISECOND" | "SECOND" | "MINUTE" | "HOUR" | "DAY"
+                bucketInterval: 1, // optional - default 1. 
+            }
 
             const heartrate = await GoogleFit.getHeartRateSamples(options);
             console.log("heartrate data:: ", heartrate);
@@ -145,7 +151,7 @@ const GoogleFitAndroidScreen = () => {
 
     return (
         <View>
-            <Text>GoogleFitAndroidScreen</Text>
+            <Text style={{ color: "black" }}>GoogleFitAndroidScreen</Text>
         </View>
     )
 }

@@ -13,8 +13,8 @@ const AppleHealthKitIOSScreen = () => {
      */
     const checkAppleHealthKitAvaibility = async () => {
         AppleHealthKit.isAvailable((err, available) => {
-            console.log("available --->", available);
-            console.log("err --->", err);
+            console.log("isAvailable --->", available);
+            console.log("err -isAvailable-->", err);
 
             if (available) {
                 initializeHealthKit()
@@ -31,6 +31,8 @@ const AppleHealthKitIOSScreen = () => {
         AppleHealthKit.Constants.Permissions.HeartRate,
         AppleHealthKit.Constants.Permissions.BloodPressureDiastolic,
         AppleHealthKit.Constants.Permissions.BloodPressureSystolic,
+        AppleHealthKit.Constants.Permissions.Weight,
+        AppleHealthKit.Constants.Permissions.Height,
     ]
     const initOptions = {
         permissions: {
@@ -43,8 +45,8 @@ const AppleHealthKitIOSScreen = () => {
         AppleHealthKit.initHealthKit(
             (initOptions),
             (err, results) => {
-                console.log("available --->", results);
-                console.log("err --->", err);
+                console.log("available initHealthKit--->", results);
+                console.log("err ---initHealthKit>", err);
                 handlePressGetAuthStatus()
             },
         )
@@ -57,6 +59,7 @@ const AppleHealthKitIOSScreen = () => {
             if (result.permissions) {
                 retriveStepsForGivenPeriod()
                 getHeartRateAndBloodPressureData()
+                getHeightAndWeight()
             }
         });
     };
@@ -133,10 +136,76 @@ const AppleHealthKitIOSScreen = () => {
             },
         )
     }
+    // bpm = 'bpm',
+    // calorie = 'calorie',
+    // celsius = 'celsius',
+    // count = 'count',
+    // day = 'day',
+    // fahrenheit = 'fahrenheit',
+    // foot = 'foot',
+    // gram = 'gram',
+    // hour = 'hour',
+    // inch = 'inch',
+    // joule = 'joule',
+    // kilocalorie = 'kilocalorie',
+    // meter = 'meter',
+    // mgPerdL = 'mgPerdL',
+    // mile = 'mile',
+    // minute = 'minute',
+    // mmhg = 'mmhg',
+    // mmolPerL = 'mmolPerL',
+    // percent = 'percent',
+    // pound = 'pound',
+    // second = 'second',
+    const getHeightAndWeight = () => {
+        let options = {
+            unit: 'foot', // optional; default 'inch'
+            startDate: yesterdayDate, // required
+            endDate: todayDate, // optional; default now
+            ascending: false, // optional; default false
+            limit: 10, // optional; default no limit
+        }
+        AppleHealthKit.getHeightSamples(
+            options,
+            (err, results) => {
+                console.log("err-getHeightSamples-->", err);
+                console.log("results--getHeightSamples->", results);
+            },
+        )
+
+        AppleHealthKit.getLatestHeight({
+            unit: "foot"
+        }, (err, results) => {
+            console.log("err-getLatestHeight-->", err);
+            console.log("results--getLatestHeight->", results);
+        })
+
+        AppleHealthKit.getLatestWeight({
+            unit: AppleHealthKit.Constants.Units.pound
+        }, (err, results) => {
+            console.log("err-getLatestWeight-->", err);
+            console.log("results--getLatestWeight->", results);
+        })
+
+        let options2 = {
+            unit: 'pound', // optional; default 'pound'
+            startDate: yesterdayDate, // required
+            endDate: todayDate, // optional; default now
+            ascending: false, // optional; default false
+            limit: 10, // optional; default no limit
+        }
+        AppleHealthKit.getWeightSamples(
+            options2,
+            (err, results) => {
+                console.log("err-getWeightSamples-->", err);
+                console.log("results--getWeightSamples->", results);
+            },
+        )
+    }
 
     return (
         <View>
-            <Text>AppleHealthKitIOSScreen</Text>
+            <Text style={{ color: "black" }}>AppleHealthKitIOSScreen</Text>
         </View>
     )
 }
