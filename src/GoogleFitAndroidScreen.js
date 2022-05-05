@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Text, View, Alert, Linking } from 'react-native';
 import GoogleFit, { BucketUnit, Scopes } from 'react-native-google-fit'
-const googleFitClientId = "290146831688-pidp57t71u84rgpk6ma8j3obmnns6a9a.apps.googleusercontent.com"
 import Share from "react-native-share";
 
 const GoogleFitAndroidScreen = () => {
