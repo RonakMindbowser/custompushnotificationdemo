@@ -33,6 +33,20 @@
 				<key>NSExceptionAllowsInsecureHTTPLoads</key>
 				<true/>
 			</dict>
+      <key>unique.cloudfront.net</key>
+            <dict>
+              <key>NSIncludesSubdomains</key>
+              <true/>
+              <key>NSExceptionAllowsInsecureHTTPLoads</key>
+              <true/>
+            </dict>
+            <key>amazonaws.com</key>
+                  <dict>
+                    <key>NSIncludesSubdomains</key>
+                    <true/>
+                    <key>NSExceptionAllowsInsecureHTTPLoads</key>
+                    <true/>
+                  </dict>
 		</dict>
 	</dict>
 	<key>NSLocationWhenInUseUsageDescription</key>
@@ -73,5 +87,31 @@
           </array>
       </dict>
   </array>
+  <key>UIAppFonts</key>
+  <array>
+  <string>AntDesign.ttf</string>
+  <string>Entypo.ttf</string>
+  <string>EvilIcons.ttf</string>
+  <string>Feather.ttf</string>
+  <string>FontAwesome.ttf</string>
+  <string>FontAwesome5_Brands.ttf</string>
+  <string>FontAwesome5_Regular.ttf</string>
+  <string>FontAwesome5_Solid.ttf</string>
+  <string>Foundation.ttf</string>
+  <string>Ionicons.ttf</string>
+  <string>MaterialIcons.ttf</string>
+  <string>MaterialCommunityIcons.ttf</string>
+  <string>SimpleLineIcons.ttf</string>
+  <string>Octicons.ttf</string>
+  <string>Zocial.ttf</string>
+</array>
+  <key>NSCalendarsUsageDescription</key>
+    <string>YouFlerish requires access to the calendar for adding meeting schedules.</string>
+    <key>NSCameraUsageDescription</key>
+    <string>YouFlerish needs camera access to take pictures.</string>
+    <key>NSContactsUsageDescription</key>
+    <string>YouFlerish needs contact access to send invitations to join teams.</string>
+    <key>NSPhotoLibraryUsageDescription</key>
+    <string>YouFlerish needs library access to upload images.</string>
 </dict>
 </plist>
